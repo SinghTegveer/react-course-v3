@@ -1,56 +1,49 @@
 * {
   margin: 0;
   padding: 0;
+  /* Add elements padding and border to the specified width and height */
   box-sizing: border-box;
 }
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  /* System font */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   background: #f1f5f8;
   color: #222;
 }
 
 .booklist {
-  width: 90vw;
-  max-width: 1170px;
-  margin: 5rem auto;
+  width: 90vw; /* 90% of the screen width*/
+  max-width: 1000px; /* Width can never exceed 1000px */
+  margin: 5rem auto; /* Add Auto to place in the center */
   display: grid;
   gap: 2rem;
 }
 
+/* Assign styling based on conditions like screen size, resolution, orientation @Media screen and (condition) format*/
 @media screen and (min-width: 768px) {
   .booklist {
     grid-template-columns: repeat(3, 1fr);
-    align-items: start;
   }
 }
+
 .book {
   background: #fff;
   border-radius: 1rem;
   padding: 2rem;
   text-align: center;
 }
+
 .book img {
   width: 100%;
-  object-fit: cover;
-}
-.book h2 {
-  margin-top: 1rem;
-  font-size: 1rem;
+  object-fit: cover; /* Image will be clipped to fit its aspect ratio */
 }
 
-.book h4 {
-  color: #617d98;
-  font-size: 0.75rem;
-  margin-top: 0.5rem;
-  letter-spacing: 2px;
-}
-.book p {
-  margin: 1rem 0 0.5rem;
-}
-h1 {
-  text-align: center;
-  margin-top: 4rem;
-  text-transform: capitalize;
+.book h2 {
+  /* These wont work because will be preceded by Inline styles*/
+  margin-top: 1rem;
+  font-size: 1rem;
+  /* This will work because not available in Inline Styles*/
+  letter-spacing: 1px;
 }
